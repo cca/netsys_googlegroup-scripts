@@ -16,17 +16,19 @@ else
         $GAM update group $GROUP add manager user $MANAGER
         $GAM update group $GROUP add manager user $MANAGER2
 	$GAM update group $GROUP who_can_join invited_can_join
+	$GAM update group $GROUP description "default CCA Google Group"
 	$GAM update group $GROUP who_can_invite all_managers_can_invite
-	$GAM update group $GROUP  allow_external_members true
-	$GAM update group $GROUP  who_can_post_message anyone_can_post
+	$GAM update group $GROUP  allow_external_members false
+	$GAM update group $GROUP  who_can_post_message managers_can_post
 	$GAM update group $GROUP  allow_web_posting false
 	$GAM update group $GROUP  primary_language en
 	$GAM update group $GROUP  is_archived true
 	$GAM update group $GROUP  archive_only false
 	$GAM update group $GROUP  reply_to reply_to_sender
 	$GAM update group $GROUP  default_message_deny_notification_text "Your message to the $GROUP group has been rejected."
-	$GAM update group $GROUP  who_can_view_membership ALL_MEMBERS_CAN_VIEW
-	$GAM update group $GROUP  include_in_global_address_list true
+	$GAM update group $GROUP  who_can_view_membership all_managers_can_view
+	$GAM update group $GROUP  who_can_leave_group ALL_MANAGERS_CAN_LEAVE
+	$GAM update group $GROUP  include_in_global_address_list false
 	$GAM update group $GROUP  members_can_post_as_the_group false
 	$GAM update group $GROUP  message_moderation_level moderate_none
 	$GAM update group $GROUP  send_message_deny_notification false
